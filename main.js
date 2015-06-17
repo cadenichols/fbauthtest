@@ -7,6 +7,13 @@ function init(){
 }
 
 function loginClicked(){
-  
-  alert('sup');
+  ref.authWithOAuthPopup("twitter", authHandler);
+}
+
+function authHandler(error, authData) {
+  if (error) {
+    console.log("Login Failed!", error);
+  } else {
+    console.log("Authenticated successfully with payload:", authData);
+  }
 }
